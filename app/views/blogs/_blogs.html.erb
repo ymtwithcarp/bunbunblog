@@ -1,0 +1,20 @@
+    <div class="content_post">
+	  <div class ="nickname more">
+	    <%= blog.user.nickname%>
+	  	  <span class="slid">
+		  	    <ul class="more_list">
+				  <li><%= link_to "読む", "/blogs/#{blog.id}"%></li>
+				  <% if user_signed_in? && current_user.id == blog.user.id %>
+					  <li><%= link_to "編集する", "/blogs/#{blog.id}/edit"%></li>
+					  <li><%= link_to "消しちゃう", "/blogs/#{blog.id}", method: :delete%></li>
+				  <% end %>
+			    </ul>
+		  </span>
+	  	</div>
+	    <div class="title">
+	      <%= blog.title%>
+ 	    </div>
+	    <div class="text">
+	      <%= simple_format(blog.text) %>
+	    </div>
+	</div>

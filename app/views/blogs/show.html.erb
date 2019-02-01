@@ -1,0 +1,14 @@
+<div class="contents">
+	<div class="content_post">
+	  <div class ="nickname more">
+	    <h4><%= @blog.user.nickname%></h4>
+	   </div>
+	   <div class="title">
+		 <%= @blog.title%>
+	   </div>
+	   <div class="text">
+		 <%= simple_format(@blog.text) %>
+	   </div>
+	</div>
+	<a href="/" class="btn">戻る</a>
+</div>

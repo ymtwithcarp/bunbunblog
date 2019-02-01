@@ -1,0 +1,30 @@
+<div class="contents row">
+  <h2>仲間入りの時間</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="field">
+      <%= f.label :源氏名 %><br />
+      <%= f.text_field :nickname, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :メアド %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :パスワード %>
+      <% if @minimum_password_length %>
+      <em>(少なくても<%= @minimum_password_length %>文字は書いてね)</em>
+      <% end %><br />
+      <%= f.password_field :password%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "この血を分かつことをここに誓う" %>
+    </div>
+  <% end %>
+</div>
+
+
